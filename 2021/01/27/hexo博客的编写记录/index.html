@@ -6,15 +6,25 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://example.com">
-  <title>Archives: 2021/1 | Hexo</title>
+  <title>hexo博客的编写记录 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://example.com/archives/2021/01/index.html">
+  <meta name="description" content="hexo 博客编写记录">
+<meta property="og:type" content="article">
+<meta property="og:title" content="hexo博客的编写记录">
+<meta property="og:url" content="http://example.com/2021/01/27/hexo%E5%8D%9A%E5%AE%A2%E7%9A%84%E7%BC%96%E5%86%99%E8%AE%B0%E5%BD%95/index.html">
 <meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="hexo 博客编写记录">
 <meta property="og:locale" content="en_US">
+<meta property="og:image" content="http://example.com/assets/jietu.png">
+<meta property="og:image" content="http://example.com/assets/jietu01.png">
+<meta property="og:image" content="http://example.com/assets/jietu.png">
+<meta property="og:image" content="http://example.com/assets/jietu02.png">
+<meta property="og:image" content="http://example.com/assets/jietu03.png">
+<meta property="article:published_time" content="2021-01-26T16:09:37.000Z">
+<meta property="article:modified_time" content="2021-01-26T17:16:57.658Z">
 <meta property="article:author" content="LJLJason">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/assets/jietu.png">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -153,76 +163,212 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
+            <article id="post-hexo博客的编写记录" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
   
+    <h1 class="article-title" itemprop="name">
+      hexo博客的编写记录
+    </h1>
   
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2021" class="archive-year">2021</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2021/01/27/hexo%E5%8D%9A%E5%AE%A2%E7%9A%84%E7%BC%96%E5%86%99%E8%AE%B0%E5%BD%95/" class="archive-article-date">
+
+        
+        <a href="/2021/01/27/hexo%E5%8D%9A%E5%AE%A2%E7%9A%84%E7%BC%96%E5%86%99%E8%AE%B0%E5%BD%95/" class="archive-article-date">
   	<time datetime="2021-01-26T16:09:37.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-01-27</time>
 </a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2021/01/27/hexo%E5%8D%9A%E5%AE%A2%E7%9A%84%E7%BC%96%E5%86%99%E8%AE%B0%E5%BD%95/">hexo博客的编写记录</a>
-    </h1>
-  
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="hexo-博客编写记录"><a href="#hexo-博客编写记录" class="headerlink" title="hexo 博客编写记录"></a>hexo 博客编写记录</h1><a id="more"></a> 
+<hr>
+<h2 id="准备篇"><a href="#准备篇" class="headerlink" title="准备篇"></a>准备篇</h2><ul>
+<li><p>git</p>
+</li>
+<li><p>nodejs</p>
+</li>
+<li><p>bash命令</p>
+</li>
+</ul>
+<p>好吧，这样讲未免显得门槛略高，其实hexo是一种非常零门槛的工具，只要你想学，任何没有专业知识的人都能用起来，只要照着做就可以了  </p>
+<h2 id="环境搭建"><a href="#环境搭建" class="headerlink" title="环境搭建"></a>环境搭建</h2><h3 id="第一步："><a href="#第一步：" class="headerlink" title="第一步："></a>第一步：</h3><p>在电脑安装git （如果下载不了,可以通过我的网盘下载git ）git是一个伟大的版本控制软件，它的作用在于作为一个代码提交工具，将你编写的每一行代码（或文字）存放到一个代码仓库，它在其中起到记录你每一次提交历史的作用，这样你就可以对自己的每一次提交历史有直观的查看，并且可以对比不同版本之间的区别，还可以回退到某一个提交历史节点，当然还有其它很多好处，不多阐述。安装好之后，点击鼠标右键出现如下图标即安装成功。<br><img src="/assets/jietu.png" alt="avatar">  </p>
+<h3 id="第二步-安装nodejs"><a href="#第二步-安装nodejs" class="headerlink" title="第二步:安装nodejs"></a>第二步:安装nodejs</h3><p>如果你想在电脑尚未安装git的情况下安装nodejs，或者安装nvm失败，你也可以通过传统的方式安装nodejs，如下：<br><img src="/assets/jietu01.png" alt="avatar"></p>
+<p>访问nodejs官网 下载，或者通过我的网盘下载 安装包，安装方式如同安装其他软件一样安装成功后打开cmd窗口，键入node –version，若如下图所示则证明安装成功</p>
+<h2 id="如何安装"><a href="#如何安装" class="headerlink" title="如何安装"></a>如何安装</h2><p>接下来你就可以正式安装hexo了，首先点击进入“我的电脑”，然后随便找个空间大的盘符，随意创建一个空文件夹”xxx”.然后进入文件内，然后右键点击鼠标点击 git bash here 如下图所示<br><img src="/assets/jietu.png" alt="avatar"><br>然后粘贴命令 npm install -g hexo-cli  </p>
+<h2 id="开始使用"><a href="#开始使用" class="headerlink" title="开始使用"></a>开始使用</h2><p>首先，我们通过</p>
+<p>hexo init </p>
+<p>这就是通过刚才安装的hexo里的hexo init（初始化）命令创建了一个hexo式的文件夹，点进去看看都有什么。。。。<br><img src="/assets/jietu02.png" alt="avatar"><br>上述截图中文件夹地址名就是你所创文件夹的地址名称<br>初始化完成后，我们键入 $ npm install hexo-deployer-git –save<br>命令 建立与github的连接通道<br>当然我们在将hexo 博客上传到github之前应该先配置下相关参数，具体如下：  </p>
+<h3 id="相关文件说明"><a href="#相关文件说明" class="headerlink" title="相关文件说明"></a>相关文件说明</h3><p>config.yml：主配置文件（博客写到一半时突然获知YAML原来是一种新型的配置文件语言，是一种比JSON还简洁和强大的格式，而yml则是这种配置文件的后缀）</p>
+<p>package.json：应用数据，EJS、Stylus和Markdown渲染器已默认安装，当然你也可以卸载掉它们，如果你想</p>
+<p>scaffolds（脚手架）：当你新建一篇帖子时，hexo会基于这个里面的模板生成一个文件</p>
+<p>source（源）：这是你放置网站内容的地方，hexo会忽略隐藏文件或者以下划线 _ 开头的文件夹，除了_post这个目录。可渲染的文件，例如markdown文件、HTML文件会被hexo处理并放入public（发布）目录，其他文件将会被原样拷贝过去。</p>
+<p>themes（主题）：Hexo会结合主题的网页内容和你的博文生成静态站点<br>当你第一次hexo init之后生成的一系列文件其实包含了hexo最核心的一些东西，其中包含如上所介绍的，包括主配置文件_config.yml、source目录里的_post（帖子）里放了一篇示例博文“hello-world.md”、themes里提供了默认主题landscape、scaffolds里提供了post文件的初始模子。这一切就足以让你快速体验如何部署一个博客在放在网上提供别人来访问<br>设置完相关参数之后我们可以通过hexo g 命令在本地部署好项目，然后通过<br>“hexo d”<br>命令将你的hexo博客项目上传到GitHub仓库上。当然这之前你要现在你的GitHub上创键一个仓库.(如果你不想用多余的钱去买域名，则可以将你github仓库的名称取名为”github账号名.github.io”)。如果按上述操作好后，在Settings里一直往下拉<br>会看到如下图所示:<br><img src="/assets/jietu03.png" alt="avatar"><br>则设置成功。这样你的hexo 博客域名则和你的github 域名绑定成功  </p>
+<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="//music.163.com/outchain/player?type=2&id=518725853&auto=0&height=66"></iframe>
+ 
 
-        <div class="article-info info-on-right">
-          
-          
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/assets/wechat.png">
+                      <span class="reward-type">微信</span>
+                    </div>
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://ljllovefamily.github.io/021/01/27/hexo%E5%8D%9A%E5%AE%A2%E7%9A%84%E7%BC%96%E5%86%99%E8%AE%B0%E5%BD%95/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2021/01/26/hello-world/" class="archive-article-date">
-  	<time datetime="2021-01-26T14:51:37.602Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-01-26</time>
-</a>
+<nav id="article-nav">
+  
+  
+    <a href="/2021/01/26/hello-world/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Hello World</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2021/01/26/hello-world/">Hello World</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
+        
+        
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#hexo-%E5%8D%9A%E5%AE%A2%E7%BC%96%E5%86%99%E8%AE%B0%E5%BD%95"><span class="toc-number">1.</span> <span class="toc-text">hexo 博客编写记录</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%87%86%E5%A4%87%E7%AF%87"><span class="toc-number">1.1.</span> <span class="toc-text">准备篇</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA"><span class="toc-number">1.2.</span> <span class="toc-text">环境搭建</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AC%AC%E4%B8%80%E6%AD%A5%EF%BC%9A"><span class="toc-number">1.2.1.</span> <span class="toc-text">第一步：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AC%AC%E4%BA%8C%E6%AD%A5-%E5%AE%89%E8%A3%85nodejs"><span class="toc-number">1.2.2.</span> <span class="toc-text">第二步:安装nodejs</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%A6%82%E4%BD%95%E5%AE%89%E8%A3%85"><span class="toc-number">1.3.</span> <span class="toc-text">如何安装</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%BC%80%E5%A7%8B%E4%BD%BF%E7%94%A8"><span class="toc-number">1.4.</span> <span class="toc-text">开始使用</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%9B%B8%E5%85%B3%E6%96%87%E4%BB%B6%E8%AF%B4%E6%98%8E"><span class="toc-number">1.4.1.</span> <span class="toc-text">相关文件说明</span></a></li></ol></li></ol></li></ol>
+                    </div>
+                </span>
+            </div>
         </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
+        
+    </div>
+</aside>
+
+
+
   
   
-    </div></section>
   
 
-    
+  
+
+  
+
+  
 
 
           </div>
@@ -245,8 +391,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
