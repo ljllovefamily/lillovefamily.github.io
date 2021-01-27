@@ -6,15 +6,22 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://example.com">
-  <title>Archives: 2021/1 | Hexo</title>
+  <title>关于SpringMVC配置问题 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://example.com/archives/2021/01/index.html">
+  <meta name="description" content="SpringMVC入门因为测试SpringMVC时我们用到了DispatcherServlet(控制器)，JSP等。而且此次采用MAVEN作为我们创建SpringMVC测试工程的框架。  第一步导入POM文件相关依赖:  &lt;dependencies&gt; &lt;dependency&gt;   &lt;groupId&gt;junit&lt;&#x2F;groupId&gt;   &lt;arti">
+<meta property="og:type" content="article">
+<meta property="og:title" content="关于SpringMVC配置问题">
+<meta property="og:url" content="http://example.com/2021/01/27/%E5%85%B3%E4%BA%8ESpringMVC%E9%85%8D%E7%BD%AE%E9%97%AE%E9%A2%98/index.html">
 <meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="SpringMVC入门因为测试SpringMVC时我们用到了DispatcherServlet(控制器)，JSP等。而且此次采用MAVEN作为我们创建SpringMVC测试工程的框架。  第一步导入POM文件相关依赖:  &lt;dependencies&gt; &lt;dependency&gt;   &lt;groupId&gt;junit&lt;&#x2F;groupId&gt;   &lt;arti">
 <meta property="og:locale" content="en_US">
+<meta property="og:image" content="http://example.com/assets/webxml.png">
+<meta property="og:image" content="http://example.com/assets/springmvc.png">
+<meta property="article:published_time" content="2021-01-27T08:18:00.000Z">
+<meta property="article:modified_time" content="2021-01-27T09:07:38.875Z">
 <meta property="article:author" content="LJLJason">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/assets/webxml.png">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -153,103 +160,238 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
+            <article id="post-关于SpringMVC配置问题" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
   
+    <h1 class="article-title" itemprop="name">
+      关于SpringMVC配置问题
+    </h1>
   
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2021" class="archive-year">2021</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2021/01/27/%E5%85%B3%E4%BA%8ESpringMVC%E9%85%8D%E7%BD%AE%E9%97%AE%E9%A2%98/" class="archive-article-date">
+
+        
+        <a href="/2021/01/27/%E5%85%B3%E4%BA%8ESpringMVC%E9%85%8D%E7%BD%AE%E9%97%AE%E9%A2%98/" class="archive-article-date">
   	<time datetime="2021-01-27T08:18:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-01-27</time>
 </a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2021/01/27/%E5%85%B3%E4%BA%8ESpringMVC%E9%85%8D%E7%BD%AE%E9%97%AE%E9%A2%98/">关于SpringMVC配置问题</a>
-    </h1>
-  
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="SpringMVC入门"><a href="#SpringMVC入门" class="headerlink" title="SpringMVC入门"></a>SpringMVC入门</h1><p>因为测试SpringMVC时我们用到了DispatcherServlet(控制器)，JSP等。而且此次采用MAVEN作为我们创建SpringMVC测试工程的框架。 </p>
+<h2 id="第一步"><a href="#第一步" class="headerlink" title="第一步"></a>第一步</h2><p>导入POM文件相关依赖:</p>
+<pre><code> &lt;dependencies&gt;
+&lt;dependency&gt;
+  &lt;groupId&gt;junit&lt;/groupId&gt;
+  &lt;artifactId&gt;junit&lt;/artifactId&gt;
+  &lt;version&gt;4.11&lt;/version&gt;
+  &lt;scope&gt;compile&lt;/scope&gt;
+&lt;/dependency&gt;
+&lt;dependency&gt;
+  &lt;groupId&gt;org.springframework&lt;/groupId&gt;
+  &lt;artifactId&gt;spring-webmvc&lt;/artifactId&gt;
+  &lt;version&gt;$&#123;spring.version&#125;&lt;/version&gt;
+&lt;/dependency&gt;
+&lt;dependency&gt;
+  &lt;groupId&gt;org.springframework&lt;/groupId&gt;
+  &lt;artifactId&gt;spring-web&lt;/artifactId&gt;
+  &lt;version&gt;$&#123;spring.version&#125;&lt;/version&gt;
+&lt;/dependency&gt;
+&lt;dependency&gt;
+  &lt;groupId&gt;javax.servlet&lt;/groupId&gt;
+  &lt;artifactId&gt;servlet-api&lt;/artifactId&gt;
+  &lt;version&gt;2.5&lt;/version&gt;
+  &lt;scope&gt;provided&lt;/scope&gt;
+&lt;/dependency&gt;
+&lt;dependency&gt;
+  &lt;groupId&gt;javax.servlet&lt;/groupId&gt;
+  &lt;artifactId&gt;jstl&lt;/artifactId&gt;
+  &lt;version&gt;1.2&lt;/version&gt;
+&lt;/dependency&gt;
+&lt;dependency&gt;
+  &lt;groupId&gt;org.springframework&lt;/groupId&gt;
+  &lt;artifactId&gt;spring-beans&lt;/artifactId&gt;
+  &lt;version&gt;$&#123;spring.version&#125;&lt;/version&gt;
+&lt;/dependency&gt;
+&lt;dependency&gt;
+  &lt;groupId&gt;org.springframework&lt;/groupId&gt;
+  &lt;artifactId&gt;spring-core&lt;/artifactId&gt;
+  &lt;version&gt;$&#123;spring.version&#125;&lt;/version&gt;
+&lt;/dependency&gt;
+&lt;dependency&gt;
+  &lt;groupId&gt;commons-logging&lt;/groupId&gt;
+  &lt;artifactId&gt;commons-logging&lt;/artifactId&gt;
+  &lt;version&gt;1.2&lt;/version&gt;
+&lt;/dependency&gt;
+</code></pre>
+  </dependencies>  
 
-        <div class="article-info info-on-right">
-          
-          
+<p>  特别注意servlet-api的scope属性最好设置为provided，不然很有可能导致报错。JSTL的 groupID 是javax.servlet 不是javax.Servlet.jsp.jstl,千万不要到导错包了.  </p>
+<h2 id="第二步"><a href="#第二步" class="headerlink" title="第二步"></a>第二步</h2><p>  在web.xml里配置MVC控制器 dispatcherservlet如下：<br>  <img src="/assets/webxml.png" alt="avatar"> </p>
+<h2 id="第三步"><a href="#第三步" class="headerlink" title="第三步"></a>第三步</h2><p>  配置SpringMVC.xml文件 用MVC原生方式配置，分别注入三个处理器对象<br>  1.BeanNameUrlHandlerMapping(处理器映射器)<br>  2.SimpleControllerHandlerAdapter(处理器配置器)<br>  3.InternalResourceViewResolver(视图解析器)  </p>
+<h3 id="具体配置方式："><a href="#具体配置方式：" class="headerlink" title="具体配置方式："></a>具体配置方式：</h3><p>  <img src="/assets/springmvc.png" alt="avatar"><br>  上述图中，配置视图解析器时，property中 prefix属性表示的为Control层跳转的具体路径，配置为”/WEB-INF/XXX/“其中xxx可以随意命名，而 suffix属性则表示跳转到具体文件类型可以以”.jsp或.html结尾，当然还以其它文件类型步一一赘述了”。  </p>
+<h2 id="第四步"><a href="#第四步" class="headerlink" title="第四步"></a>第四步</h2><p>  我们在SRC目录下的 java文件夹下创建controller层，代码如下(此方法为MVC原生方式，实际开发过程中多为注解开发–特指SpringMVC):  </p>
+<pre><code>public class MyController implements Controller &#123;
+@Override
+public ModelAndView handleRequest(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse) throws Exception &#123;
+        ModelAndView mv=new ModelAndView();
+        mv.addObject(&quot;msg&quot;,&quot;今天一天又浪费到这个破MVC启动上了&quot;);
+        mv.setViewName(&quot;info&quot;);
+    System.out.println(&quot;wocao&quot;);
+    return mv;
+&#125;
+</code></pre>
+<p>}  </p>
+<h2 id="第五步"><a href="#第五步" class="headerlink" title="第五步"></a>第五步</h2><p>上述操作完成后就可以将测试项目配置到TOMCAT中进行测试  <a target="_blank" rel="noopener" href="http://localhost/MVC/hello">http://localhost/MVC/hello</a><br>上述路径中表示项目名为MVC，而”hello”为第三步中配置springmvc.xml时 配置的Controller 层中的具体类BEAN对象的Id值。<br>这样一个简单的入门MVC就完成了</p>
 
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/assets/wechat.png">
+                      <span class="reward-type">微信</span>
+                    </div>
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://ljllovefamily.github.io/021/01/27/%E5%85%B3%E4%BA%8ESpringMVC%E9%85%8D%E7%BD%AE%E9%97%AE%E9%A2%98/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2021/01/27/hexo%E5%8D%9A%E5%AE%A2%E7%9A%84%E7%BC%96%E5%86%99%E8%AE%B0%E5%BD%95/" class="archive-article-date">
-  	<time datetime="2021-01-26T16:09:37.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-01-27</time>
-</a>
+<nav id="article-nav">
+  
+  
+    <a href="/2021/01/27/hexo%E5%8D%9A%E5%AE%A2%E7%9A%84%E7%BC%96%E5%86%99%E8%AE%B0%E5%BD%95/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">hexo博客的编写记录</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2021/01/27/hexo%E5%8D%9A%E5%AE%A2%E7%9A%84%E7%BC%96%E5%86%99%E8%AE%B0%E5%BD%95/">hexo博客的编写记录</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
+        
+        
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#SpringMVC%E5%85%A5%E9%97%A8"><span class="toc-number">1.</span> <span class="toc-text">SpringMVC入门</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AC%AC%E4%B8%80%E6%AD%A5"><span class="toc-number">1.1.</span> <span class="toc-text">第一步</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AC%AC%E4%BA%8C%E6%AD%A5"><span class="toc-number">1.2.</span> <span class="toc-text">第二步</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AC%AC%E4%B8%89%E6%AD%A5"><span class="toc-number">1.3.</span> <span class="toc-text">第三步</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%85%B7%E4%BD%93%E9%85%8D%E7%BD%AE%E6%96%B9%E5%BC%8F%EF%BC%9A"><span class="toc-number">1.3.1.</span> <span class="toc-text">具体配置方式：</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AC%AC%E5%9B%9B%E6%AD%A5"><span class="toc-number">1.4.</span> <span class="toc-text">第四步</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AC%AC%E4%BA%94%E6%AD%A5"><span class="toc-number">1.5.</span> <span class="toc-text">第五步</span></a></li></ol></li></ol>
+                    </div>
+                </span>
+            </div>
         </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
+        
+    </div>
+</aside>
+
+
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2021/01/26/hello-world/" class="archive-article-date">
-  	<time datetime="2021-01-26T14:51:37.602Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-01-26</time>
-</a>
-        </div>
-    	 
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2021/01/26/hello-world/">Hello World</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
   
 
-    
+  
+
+  
 
 
           </div>
@@ -272,8 +414,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
