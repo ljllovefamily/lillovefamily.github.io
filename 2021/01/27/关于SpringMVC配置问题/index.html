@@ -8,17 +8,17 @@
   <link rel="dns-prefetch" href="http://example.com">
   <title>关于SpringMVC配置问题 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="SpringMVC入门因为测试SpringMVC时我们用到了DispatcherServlet(控制器)，JSP等。而且此次采用MAVEN作为我们创建SpringMVC测试工程的框架。  第一步导入POM文件相关依赖:  &lt;dependencies&gt; &lt;dependency&gt;   &lt;groupId&gt;junit&lt;&#x2F;groupId&gt;   &lt;arti">
+  <meta name="description" content="SpringMVC入门">
 <meta property="og:type" content="article">
 <meta property="og:title" content="关于SpringMVC配置问题">
 <meta property="og:url" content="http://example.com/2021/01/27/%E5%85%B3%E4%BA%8ESpringMVC%E9%85%8D%E7%BD%AE%E9%97%AE%E9%A2%98/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="SpringMVC入门因为测试SpringMVC时我们用到了DispatcherServlet(控制器)，JSP等。而且此次采用MAVEN作为我们创建SpringMVC测试工程的框架。  第一步导入POM文件相关依赖:  &lt;dependencies&gt; &lt;dependency&gt;   &lt;groupId&gt;junit&lt;&#x2F;groupId&gt;   &lt;arti">
+<meta property="og:description" content="SpringMVC入门">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="http://example.com/assets/webxml.png">
 <meta property="og:image" content="http://example.com/assets/springmvc.png">
 <meta property="article:published_time" content="2021-01-27T08:18:00.000Z">
-<meta property="article:modified_time" content="2021-01-27T09:07:38.875Z">
+<meta property="article:modified_time" content="2021-01-28T03:46:49.131Z">
 <meta property="article:author" content="LJLJason">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="http://example.com/assets/webxml.png">
@@ -180,7 +180,9 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="SpringMVC入门"><a href="#SpringMVC入门" class="headerlink" title="SpringMVC入门"></a>SpringMVC入门</h1><p>因为测试SpringMVC时我们用到了DispatcherServlet(控制器)，JSP等。而且此次采用MAVEN作为我们创建SpringMVC测试工程的框架。 </p>
+        <h1 id="SpringMVC入门"><a href="#SpringMVC入门" class="headerlink" title="SpringMVC入门"></a>SpringMVC入门</h1><a id="more"></a>  
+<hr>
+<p>因为测试SpringMVC时我们用到了DispatcherServlet(控制器)，JSP等。而且此次采用MAVEN作为我们创建SpringMVC测试工程的框架。 </p>
 <h2 id="第一步"><a href="#第一步" class="headerlink" title="第一步"></a>第一步</h2><p>导入POM文件相关依赖:</p>
 <pre><code> &lt;dependencies&gt;
 &lt;dependency&gt;
@@ -244,7 +246,38 @@ public ModelAndView handleRequest(HttpServletRequest httpServletRequest, HttpSer
 &#125;
 </code></pre>
 <p>}  </p>
-<h2 id="第五步"><a href="#第五步" class="headerlink" title="第五步"></a>第五步</h2><p>上述操作完成后就可以将测试项目配置到TOMCAT中进行测试  <a target="_blank" rel="noopener" href="http://localhost/MVC/hello">http://localhost/MVC/hello</a><br>上述路径中表示项目名为MVC，而”hello”为第三步中配置springmvc.xml时 配置的Controller 层中的具体类BEAN对象的Id值。<br>这样一个简单的入门MVC就完成了</p>
+<h2 id="第五步"><a href="#第五步" class="headerlink" title="第五步"></a>第五步</h2><p>上述操作完成后就可以将测试项目配置到TOMCAT中进行测试  <a target="_blank" rel="noopener" href="http://localhost/MVC/hello">http://localhost/MVC/hello</a><br>上述路径中表示项目名为MVC，而”hello”为第三步中配置springmvc.xml时 配置的Controller 层中的具体类BEAN对象的Id值。<br>这样一个简单的入门MVC就完成了  </p>
+<hr>
+<h2 id="MVC乱码问题解决"><a href="#MVC乱码问题解决" class="headerlink" title="MVC乱码问题解决"></a>MVC乱码问题解决</h2><h3 id="1-普通乱码"><a href="#1-普通乱码" class="headerlink" title="1.普通乱码"></a>1.普通乱码</h3><p>我们可以在web.xml中配置过滤器代码如下:  </p>
+<pre><code>&lt;filter&gt;
+    &lt;filter-name&gt;characterEncodingFilter&lt;/filter-name&gt;
+    &lt;filter-class&gt;org.springframework.web.filter.CharacterEncodingFilter&lt;/filter-class&gt;
+    &lt;init-param&gt;
+        &lt;param-name&gt;encoding&lt;/param-name&gt;
+        &lt;param-value&gt;utf-8&lt;/param-value&gt;
+    &lt;/init-param&gt;
+&lt;/filter&gt;
+&lt;filter-mapping&gt;
+    &lt;filter-name&gt;characterEncodingFilter&lt;/filter-name&gt;
+    &lt;url-pattern&gt;/*&lt;/url-pattern&gt;
+&lt;/filter-mapping&gt;   
+</code></pre>
+<h3 id="2-Json乱码"><a href="#2-Json乱码" class="headerlink" title="2.Json乱码"></a>2.Json乱码</h3><p>JSon乱码我们则要在MVC配置文件里编写代码如下: </p>
+<pre><code>&lt;mvc:annotation-driven&gt;
+    &lt;mvc:message-converters register-defaults=&quot;true&quot;&gt;
+        &lt;bean class=&quot;org.springframework.http.converter.StringHttpMessageConverter&quot;&gt;
+            &lt;constructor-arg value=&quot;UTF-8&quot;/&gt;
+        &lt;/bean&gt;
+        &lt;bean class=&quot;org.springframework.http.converter.json.MappingJackson2HttpMessageConverter&quot;&gt;
+            &lt;property name=&quot;objectMapper&quot;&gt;
+                &lt;bean class=&quot;org.springframework.http.converter.json.Jackson2ObjectMapperFactoryBean&quot;&gt;
+                    &lt;property name=&quot;failOnEmptyBeans&quot; value=&quot;false&quot;/&gt;
+                &lt;/bean&gt;
+            &lt;/property&gt;
+        &lt;/bean&gt;
+    &lt;/mvc:message-converters&gt;
+&lt;/mvc:annotation-driven&gt;
+</code></pre>
 
       
 
@@ -343,6 +376,15 @@ public ModelAndView handleRequest(HttpServletRequest httpServletRequest, HttpSer
   
 <nav id="article-nav">
   
+    <a href="/2021/01/29/SSM%E6%A1%86%E6%9E%B6%E6%95%B4%E5%90%88-%E9%97%AE%E9%A2%98%E9%9B%86%E5%90%88/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          SSM框架整合-问题集合
+        
+      </div>
+    </a>
+  
   
     <a href="/2021/01/27/hexo%E5%8D%9A%E5%AE%A2%E7%9A%84%E7%BC%96%E5%86%99%E8%AE%B0%E5%BD%95/" id="article-nav-older" class="article-nav-link-wrap">
       <div class="article-nav-title">hexo博客的编写记录</div>
@@ -372,7 +414,7 @@ public ModelAndView handleRequest(HttpServletRequest httpServletRequest, HttpSer
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#SpringMVC%E5%85%A5%E9%97%A8"><span class="toc-number">1.</span> <span class="toc-text">SpringMVC入门</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AC%AC%E4%B8%80%E6%AD%A5"><span class="toc-number">1.1.</span> <span class="toc-text">第一步</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AC%AC%E4%BA%8C%E6%AD%A5"><span class="toc-number">1.2.</span> <span class="toc-text">第二步</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AC%AC%E4%B8%89%E6%AD%A5"><span class="toc-number">1.3.</span> <span class="toc-text">第三步</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%85%B7%E4%BD%93%E9%85%8D%E7%BD%AE%E6%96%B9%E5%BC%8F%EF%BC%9A"><span class="toc-number">1.3.1.</span> <span class="toc-text">具体配置方式：</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AC%AC%E5%9B%9B%E6%AD%A5"><span class="toc-number">1.4.</span> <span class="toc-text">第四步</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AC%AC%E4%BA%94%E6%AD%A5"><span class="toc-number">1.5.</span> <span class="toc-text">第五步</span></a></li></ol></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#SpringMVC%E5%85%A5%E9%97%A8"><span class="toc-number">1.</span> <span class="toc-text">SpringMVC入门</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AC%AC%E4%B8%80%E6%AD%A5"><span class="toc-number">1.1.</span> <span class="toc-text">第一步</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AC%AC%E4%BA%8C%E6%AD%A5"><span class="toc-number">1.2.</span> <span class="toc-text">第二步</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AC%AC%E4%B8%89%E6%AD%A5"><span class="toc-number">1.3.</span> <span class="toc-text">第三步</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%85%B7%E4%BD%93%E9%85%8D%E7%BD%AE%E6%96%B9%E5%BC%8F%EF%BC%9A"><span class="toc-number">1.3.1.</span> <span class="toc-text">具体配置方式：</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AC%AC%E5%9B%9B%E6%AD%A5"><span class="toc-number">1.4.</span> <span class="toc-text">第四步</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AC%AC%E4%BA%94%E6%AD%A5"><span class="toc-number">1.5.</span> <span class="toc-text">第五步</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#MVC%E4%B9%B1%E7%A0%81%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3"><span class="toc-number">1.6.</span> <span class="toc-text">MVC乱码问题解决</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E6%99%AE%E9%80%9A%E4%B9%B1%E7%A0%81"><span class="toc-number">1.6.1.</span> <span class="toc-text">1.普通乱码</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-Json%E4%B9%B1%E7%A0%81"><span class="toc-number">1.6.2.</span> <span class="toc-text">2.Json乱码</span></a></li></ol></li></ol></li></ol>
                     </div>
                 </span>
             </div>

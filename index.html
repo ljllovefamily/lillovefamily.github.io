@@ -155,6 +155,71 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-SSM框架整合-问题集合" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2021/01/29/SSM%E6%A1%86%E6%9E%B6%E6%95%B4%E5%90%88-%E9%97%AE%E9%A2%98%E9%9B%86%E5%90%88/">SSM框架整合-问题集合</a>
+    </h1>
+  
+
+        
+        <a href="/2021/01/29/SSM%E6%A1%86%E6%9E%B6%E6%95%B4%E5%90%88-%E9%97%AE%E9%A2%98%E9%9B%86%E5%90%88/" class="archive-article-date">
+  	<time datetime="2021-01-29T05:31:23.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-01-29</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="记-SSM框架整合所遇到的问题"><a href="#记-SSM框架整合所遇到的问题" class="headerlink" title="记 SSM框架整合所遇到的问题"></a>记 SSM框架整合所遇到的问题</h1>
+        
+          <a class="article-more-a" href="/2021/01/29/SSM%E6%A1%86%E6%9E%B6%E6%95%B4%E5%90%88-%E9%97%AE%E9%A2%98%E9%9B%86%E5%90%88/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2021/01/29/SSM%E6%A1%86%E6%9E%B6%E6%95%B4%E5%90%88-%E9%97%AE%E9%A2%98%E9%9B%86%E5%90%88/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-关于SpringMVC配置问题" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -175,72 +240,10 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="SpringMVC入门"><a href="#SpringMVC入门" class="headerlink" title="SpringMVC入门"></a>SpringMVC入门</h1><p>因为测试SpringMVC时我们用到了DispatcherServlet(控制器)，JSP等。而且此次采用MAVEN作为我们创建SpringMVC测试工程的框架。 </p>
-<h2 id="第一步"><a href="#第一步" class="headerlink" title="第一步"></a>第一步</h2><p>导入POM文件相关依赖:</p>
-<pre><code> &lt;dependencies&gt;
-&lt;dependency&gt;
-  &lt;groupId&gt;junit&lt;/groupId&gt;
-  &lt;artifactId&gt;junit&lt;/artifactId&gt;
-  &lt;version&gt;4.11&lt;/version&gt;
-  &lt;scope&gt;compile&lt;/scope&gt;
-&lt;/dependency&gt;
-&lt;dependency&gt;
-  &lt;groupId&gt;org.springframework&lt;/groupId&gt;
-  &lt;artifactId&gt;spring-webmvc&lt;/artifactId&gt;
-  &lt;version&gt;$&#123;spring.version&#125;&lt;/version&gt;
-&lt;/dependency&gt;
-&lt;dependency&gt;
-  &lt;groupId&gt;org.springframework&lt;/groupId&gt;
-  &lt;artifactId&gt;spring-web&lt;/artifactId&gt;
-  &lt;version&gt;$&#123;spring.version&#125;&lt;/version&gt;
-&lt;/dependency&gt;
-&lt;dependency&gt;
-  &lt;groupId&gt;javax.servlet&lt;/groupId&gt;
-  &lt;artifactId&gt;servlet-api&lt;/artifactId&gt;
-  &lt;version&gt;2.5&lt;/version&gt;
-  &lt;scope&gt;provided&lt;/scope&gt;
-&lt;/dependency&gt;
-&lt;dependency&gt;
-  &lt;groupId&gt;javax.servlet&lt;/groupId&gt;
-  &lt;artifactId&gt;jstl&lt;/artifactId&gt;
-  &lt;version&gt;1.2&lt;/version&gt;
-&lt;/dependency&gt;
-&lt;dependency&gt;
-  &lt;groupId&gt;org.springframework&lt;/groupId&gt;
-  &lt;artifactId&gt;spring-beans&lt;/artifactId&gt;
-  &lt;version&gt;$&#123;spring.version&#125;&lt;/version&gt;
-&lt;/dependency&gt;
-&lt;dependency&gt;
-  &lt;groupId&gt;org.springframework&lt;/groupId&gt;
-  &lt;artifactId&gt;spring-core&lt;/artifactId&gt;
-  &lt;version&gt;$&#123;spring.version&#125;&lt;/version&gt;
-&lt;/dependency&gt;
-&lt;dependency&gt;
-  &lt;groupId&gt;commons-logging&lt;/groupId&gt;
-  &lt;artifactId&gt;commons-logging&lt;/artifactId&gt;
-  &lt;version&gt;1.2&lt;/version&gt;
-&lt;/dependency&gt;
-</code></pre>
-  </dependencies>  
-
-<p>  特别注意servlet-api的scope属性最好设置为provided，不然很有可能导致报错。JSTL的 groupID 是javax.servlet 不是javax.Servlet.jsp.jstl,千万不要到导错包了.  </p>
-<h2 id="第二步"><a href="#第二步" class="headerlink" title="第二步"></a>第二步</h2><p>  在web.xml里配置MVC控制器 dispatcherservlet如下：<br>  <img src="/assets/webxml.png" alt="avatar"> </p>
-<h2 id="第三步"><a href="#第三步" class="headerlink" title="第三步"></a>第三步</h2><p>  配置SpringMVC.xml文件 用MVC原生方式配置，分别注入三个处理器对象<br>  1.BeanNameUrlHandlerMapping(处理器映射器)<br>  2.SimpleControllerHandlerAdapter(处理器配置器)<br>  3.InternalResourceViewResolver(视图解析器)  </p>
-<h3 id="具体配置方式："><a href="#具体配置方式：" class="headerlink" title="具体配置方式："></a>具体配置方式：</h3><p>  <img src="/assets/springmvc.png" alt="avatar"><br>  上述图中，配置视图解析器时，property中 prefix属性表示的为Control层跳转的具体路径，配置为”/WEB-INF/XXX/“其中xxx可以随意命名，而 suffix属性则表示跳转到具体文件类型可以以”.jsp或.html结尾，当然还以其它文件类型步一一赘述了”。  </p>
-<h2 id="第四步"><a href="#第四步" class="headerlink" title="第四步"></a>第四步</h2><p>  我们在SRC目录下的 java文件夹下创建controller层，代码如下(此方法为MVC原生方式，实际开发过程中多为注解开发–特指SpringMVC):  </p>
-<pre><code>public class MyController implements Controller &#123;
-@Override
-public ModelAndView handleRequest(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse) throws Exception &#123;
-        ModelAndView mv=new ModelAndView();
-        mv.addObject(&quot;msg&quot;,&quot;今天一天又浪费到这个破MVC启动上了&quot;);
-        mv.setViewName(&quot;info&quot;);
-    System.out.println(&quot;wocao&quot;);
-    return mv;
-&#125;
-</code></pre>
-<p>}  </p>
-<h2 id="第五步"><a href="#第五步" class="headerlink" title="第五步"></a>第五步</h2><p>上述操作完成后就可以将测试项目配置到TOMCAT中进行测试  <a target="_blank" rel="noopener" href="http://localhost/MVC/hello">http://localhost/MVC/hello</a><br>上述路径中表示项目名为MVC，而”hello”为第三步中配置springmvc.xml时 配置的Controller 层中的具体类BEAN对象的Id值。<br>这样一个简单的入门MVC就完成了</p>
-
+        <h1 id="SpringMVC入门"><a href="#SpringMVC入门" class="headerlink" title="SpringMVC入门"></a>SpringMVC入门</h1>
+        
+          <a class="article-more-a" href="/2021/01/27/%E5%85%B3%E4%BA%8ESpringMVC%E9%85%8D%E7%BD%AE%E9%97%AE%E9%A2%98/#more">more >></a>
+        
       
 
       
