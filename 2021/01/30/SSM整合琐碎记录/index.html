@@ -6,15 +6,23 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://example.com">
-  <title>Hexo</title>
+  <title>SSM整合琐碎记录 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://example.com/index.html">
+  <meta name="description" content="SSM整合之AJAX-AJAX前后端交互之数据传递 前端AJAX代码">
+<meta property="og:type" content="article">
+<meta property="og:title" content="SSM整合琐碎记录">
+<meta property="og:url" content="http://example.com/2021/01/30/SSM%E6%95%B4%E5%90%88%E7%90%90%E7%A2%8E%E8%AE%B0%E5%BD%95/index.html">
 <meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="SSM整合之AJAX-AJAX前后端交互之数据传递 前端AJAX代码">
 <meta property="og:locale" content="en_US">
+<meta property="og:image" content="http://example.com/assets/ssmjietuIO03.png">
+<meta property="og:image" content="http://example.com/assets/ssmjietuIO02.png">
+<meta property="og:image" content="http://example.com/assets/ssmjietuIO.png">
+<meta property="article:published_time" content="2021-01-30T08:22:12.000Z">
+<meta property="article:modified_time" content="2021-01-30T09:27:06.150Z">
 <meta property="article:author" content="LJLJason">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/assets/ssmjietuIO03.png">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -153,16 +161,14 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-    <article id="post-SSM整合琐碎记录" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+            <article id="post-SSM整合琐碎记录" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2021/01/30/SSM%E6%95%B4%E5%90%88%E7%90%90%E7%A2%8E%E8%AE%B0%E5%BD%95/">SSM整合琐碎记录</a>
+    <h1 class="article-title" itemprop="name">
+      SSM整合琐碎记录
     </h1>
   
 
@@ -176,12 +182,57 @@
     <div class="article-entry" itemprop="articleBody">
       
         <h1 id="SSM整合之AJAX-AJAX前后端交互之数据传递"><a href="#SSM整合之AJAX-AJAX前后端交互之数据传递" class="headerlink" title="SSM整合之AJAX-AJAX前后端交互之数据传递"></a>SSM整合之AJAX-AJAX前后端交互之数据传递</h1><ol>
-<li>前端AJAX代码
-        
-          <a class="article-more-a" href="/2021/01/30/SSM%E6%95%B4%E5%90%88%E7%90%90%E7%A2%8E%E8%AE%B0%E5%BD%95/#more">more >></a>
-        
+<li>前端AJAX代码 <a id="more"></a>
+</li>
+</ol>
+<hr>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">$.ajax(</span><br><span class="line">           &#123;</span><br><span class="line">       url:&quot;users&#x2F;Vlogin&quot;,</span><br><span class="line">               type:&quot;POST&quot;,</span><br><span class="line">               data:JSON.stringify(data),</span><br><span class="line">               contentType:&#39;application&#x2F;json&#39;,</span><br><span class="line">               dataType:&quot;json&quot;,</span><br><span class="line">               success :function (data)&#123;</span><br><span class="line">                   if (data.errorMsg &#x3D;&#x3D;&#x3D; &quot;success&quot;) &#123;</span><br><span class="line">                       console.log(data.errorMsg)</span><br><span class="line">                       $(&quot;#errorMsg&quot;).remove();</span><br><span class="line">                       layer.msg(&quot;登录成功&quot;);</span><br><span class="line">                       location.href &#x3D; &#39;users&#x2F;index&#39;;</span><br><span class="line">                   &#125; else &#123;</span><br><span class="line">                       &#x2F;&#x2F; if ($(&quot;#errorMsg&quot;).length &lt;&#x3D; 0) &#123;</span><br><span class="line">                       &#x2F;&#x2F;     $(&quot;form[name&#x3D;loginForm]&quot;).append(errorMsg);</span><br><span class="line">                       &#x2F;&#x2F; &#125;</span><br><span class="line">                       console.log(data.errorMsg);</span><br><span class="line">                       if(data.errorMsg &#x3D;&#x3D;&#x3D; &quot;errorcode&quot;)&#123;</span><br><span class="line">                           layer.msg(&quot;验证码错误&quot;);</span><br><span class="line">                       &#125;</span><br><span class="line">                       if(data.errorMsg &#x3D;&#x3D;&#x3D; -1)&#123;</span><br><span class="line">                           layer.msg(&quot;用户名或密码错误请重新输入&quot;);</span><br><span class="line">                       &#125;</span><br><span class="line"></span><br><span class="line">                   &#125;</span><br><span class="line">               &#125;</span><br><span class="line">           &#125;</span><br><span class="line">       )</span><br></pre></td></tr></table></figure>
+<p>  2.后端代码如下</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"> @RequestMapping(path &#x3D; &quot;Vlogin&quot;)</span><br><span class="line">@ResponseBody</span><br><span class="line">public Map&lt;String,Object&gt; Vlogin(@RequestBody(required &#x3D; true) Map&lt;String,Object&gt; map, HttpServletRequest req)&#123;</span><br><span class="line">    System.out.println(&quot;wocaocoaocoa&quot;);</span><br><span class="line">    String username&#x3D;map.get(&quot;username&quot;).toString();</span><br><span class="line">    String password&#x3D;map.get(&quot;password&quot;).toString();</span><br><span class="line">    String scode&#x3D;map.get(&quot;captcha&quot;).toString();</span><br><span class="line">    String checkcode&#x3D;(String)req.getSession().getAttribute(&quot;checkCode&quot;);</span><br><span class="line">    RUser loginuser&#x3D;new RUser();</span><br><span class="line">    loginuser.setUname(username);</span><br><span class="line">    loginuser.setPassword(password);</span><br><span class="line">    if(!scode.isEmpty()&amp;&amp;scode.equalsIgnoreCase(checkcode))&#123;</span><br><span class="line">        RUser veryfyuser &#x3D;rs.queryINFO(loginuser);</span><br><span class="line">        System.out.println(veryfyuser.getUserId());</span><br><span class="line">        if(veryfyuser !&#x3D; null &amp;&amp; !veryfyuser.getUname().equals(&quot;&quot;) &amp;&amp; !veryfyuser.equals(&quot;&quot;))&#123;</span><br><span class="line">            map.put(&quot;errorMsg&quot;,&quot;success&quot;);</span><br><span class="line"></span><br><span class="line">        &#125;else&#123;</span><br><span class="line">            map.put(&quot;errorMsg&quot;,-1);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    &#125;else&#123;</span><br><span class="line">        map.put(&quot;errorMsg&quot;,&quot;errorcode&quot;);</span><br><span class="line">    &#125;</span><br><span class="line">    return map;</span><br><span class="line">&#125; </span><br></pre></td></tr></table></figure>
+<p>上述两段代码是为了实现登录功能，前端采用的ajax异步请求技术将数据传到后端，而后端则是通过SpringMVC Controller层来实现去调用业务层方法-再由DAO层取mysql数据库查询USER表进行校验。<br>    (其中老忘记的是当此方法不实现跳转功能时,应该再方法上加上@Responsebody,表示只返回相关参数不做跳转 。。。。。。而此方法也是使用的Map&lt;String,Object&gt;集合做接收前端参数以及返回参数给前端的容器)<br>    【获取前端参数用map.get()方法，而传会msg参数则用map.put方法】<br>    前端AJAX的URL地址书写:”@RequestMapping的VAlue值Controller层里有几层地址就写几层” </p>
+<h2 id="跳转到后端主页面"><a href="#跳转到后端主页面" class="headerlink" title="跳转到后端主页面"></a>跳转到后端主页面</h2><h3 id="1-后端代码如下图"><a href="#1-后端代码如下图" class="headerlink" title="1.后端代码如下图"></a>1.后端代码如下图</h3><p><img src="/assets/ssmjietuIO03.png" alt="avatar">  </p>
+<p><img src="/assets/ssmjietuIO02.png" alt="avatar">   </p>
+<p><img src="/assets/ssmjietuIO.png" alt="avatar">  </p>
+<h4 id="1-1解释"><a href="#1-1解释" class="headerlink" title="1-1解释"></a>1-1解释</h4><p>第一张图片是对POM文件的修改，让init.json文件加载到target目录里取<br>第二张图则是关于init.json文件的定位，特别注意VALUE里的值一定要加”classpath:json文件名”<br>    第三章图则是关与IO读取json文件数据，这里有个点注意就是:有些老师可能用的   </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">new BufferedReader(new FileReader(file)) </span><br></pre></td></tr></table></figure>
+<p> 直接读取他没显示乱码问题，但我操作的时候就偏偏乱码了，所以这里要写成  </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">InputStreamReader isr&#x3D;new InputStreamReader(new FileInputStream(file),&quot;UTF-8&quot;);</span><br><span class="line">BufferedReader br&#x3D;new BufferedReader(isr); </span><br></pre></td></tr></table></figure>
+<p>这里就解决了IO读取乱码问题。 </p>
+<h4 id="1-2：其它细节"><a href="#1-2：其它细节" class="headerlink" title="1-2：其它细节"></a>1-2：其它细节</h4><p>因为我们传输的是JSON数据，这里应该要设置下contentType,代码如下   </p>
+<pre><code>      resp.setContentType(&quot;application/json;charset=utf-8&quot;);
+     resp.getWriter().write(sb.toString()); 
+
+
+</code></pre>
+
       
 
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/assets/wechat.png">
+                      <span class="reward-type">微信</span>
+                    </div>
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
       
     </div>
     <div class="article-info article-info-index">
@@ -190,16 +241,75 @@
       
 
       
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2021/01/30/SSM%E6%95%B4%E5%90%88%E7%90%90%E7%A2%8E%E8%AE%B0%E5%BD%95/">展开全文 >></a>
-        </p>
-      
 
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://ljllovefamily.github.io/021/01/30/SSM%E6%95%B4%E5%90%88%E7%90%90%E7%A2%8E%E8%AE%B0%E5%BD%95/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
       
       <div class="clearfix"></div>
     </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
+  
+  
+    <a href="/2021/01/29/SSM%E6%A1%86%E6%9E%B6%E6%95%B4%E5%90%88-%E9%97%AE%E9%A2%98%E9%9B%86%E5%90%88/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">SSM框架整合-问题集合</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
 
 <aside class="wrap-side-operation">
     <div class="mod-side-operation">
@@ -214,279 +324,32 @@
         </div>
         
         
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-SSM框架整合-问题集合" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2021/01/29/SSM%E6%A1%86%E6%9E%B6%E6%95%B4%E5%90%88-%E9%97%AE%E9%A2%98%E9%9B%86%E5%90%88/">SSM框架整合-问题集合</a>
-    </h1>
-  
-
-        
-        <a href="/2021/01/29/SSM%E6%A1%86%E6%9E%B6%E6%95%B4%E5%90%88-%E9%97%AE%E9%A2%98%E9%9B%86%E5%90%88/" class="archive-article-date">
-  	<time datetime="2021-01-29T05:31:23.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-01-29</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="记-SSM框架整合所遇到的问题"><a href="#记-SSM框架整合所遇到的问题" class="headerlink" title="记 SSM框架整合所遇到的问题"></a>记 SSM框架整合所遇到的问题</h1>
-        
-          <a class="article-more-a" href="/2021/01/29/SSM%E6%A1%86%E6%9E%B6%E6%95%B4%E5%90%88-%E9%97%AE%E9%A2%98%E9%9B%86%E5%90%88/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2021/01/29/SSM%E6%A1%86%E6%9E%B6%E6%95%B4%E5%90%88-%E9%97%AE%E9%A2%98%E9%9B%86%E5%90%88/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#SSM%E6%95%B4%E5%90%88%E4%B9%8BAJAX-AJAX%E5%89%8D%E5%90%8E%E7%AB%AF%E4%BA%A4%E4%BA%92%E4%B9%8B%E6%95%B0%E6%8D%AE%E4%BC%A0%E9%80%92"><span class="toc-number">1.</span> <span class="toc-text">SSM整合之AJAX-AJAX前后端交互之数据传递</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%B7%B3%E8%BD%AC%E5%88%B0%E5%90%8E%E7%AB%AF%E4%B8%BB%E9%A1%B5%E9%9D%A2"><span class="toc-number">1.1.</span> <span class="toc-text">跳转到后端主页面</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E5%90%8E%E7%AB%AF%E4%BB%A3%E7%A0%81%E5%A6%82%E4%B8%8B%E5%9B%BE"><span class="toc-number">1.1.1.</span> <span class="toc-text">1.后端代码如下图</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-1%E8%A7%A3%E9%87%8A"><span class="toc-number">1.1.1.1.</span> <span class="toc-text">1-1解释</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-2%EF%BC%9A%E5%85%B6%E5%AE%83%E7%BB%86%E8%8A%82"><span class="toc-number">1.1.1.2.</span> <span class="toc-text">1-2：其它细节</span></a></li></ol></li></ol></li></ol></li></ol>
+                    </div>
+                </span>
             </div>
         </div>
         
-        
     </div>
 </aside>
 
 
 
-
   
-    <article id="post-关于SpringMVC配置问题" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2021/01/27/%E5%85%B3%E4%BA%8ESpringMVC%E9%85%8D%E7%BD%AE%E9%97%AE%E9%A2%98/">关于SpringMVC配置问题</a>
-    </h1>
   
 
-        
-        <a href="/2021/01/27/%E5%85%B3%E4%BA%8ESpringMVC%E9%85%8D%E7%BD%AE%E9%97%AE%E9%A2%98/" class="archive-article-date">
-  	<time datetime="2021-01-27T08:18:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-01-27</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="SpringMVC入门"><a href="#SpringMVC入门" class="headerlink" title="SpringMVC入门"></a>SpringMVC入门</h1>
-        
-          <a class="article-more-a" href="/2021/01/27/%E5%85%B3%E4%BA%8ESpringMVC%E9%85%8D%E7%BD%AE%E9%97%AE%E9%A2%98/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2021/01/27/%E5%85%B3%E4%BA%8ESpringMVC%E9%85%8D%E7%BD%AE%E9%97%AE%E9%A2%98/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-hexo博客的编写记录" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2021/01/27/hexo%E5%8D%9A%E5%AE%A2%E7%9A%84%E7%BC%96%E5%86%99%E8%AE%B0%E5%BD%95/">hexo博客的编写记录</a>
-    </h1>
   
 
-        
-        <a href="/2021/01/27/hexo%E5%8D%9A%E5%AE%A2%E7%9A%84%E7%BC%96%E5%86%99%E8%AE%B0%E5%BD%95/" class="archive-article-date">
-  	<time datetime="2021-01-26T16:09:37.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-01-27</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="hexo-博客编写记录"><a href="#hexo-博客编写记录" class="headerlink" title="hexo 博客编写记录"></a>hexo 博客编写记录</h1>
-        
-          <a class="article-more-a" href="/2021/01/27/hexo%E5%8D%9A%E5%AE%A2%E7%9A%84%E7%BC%96%E5%86%99%E8%AE%B0%E5%BD%95/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2021/01/27/hexo%E5%8D%9A%E5%AE%A2%E7%9A%84%E7%BC%96%E5%86%99%E8%AE%B0%E5%BD%95/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-hello-world" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2021/01/26/hello-world/">Hello World</a>
-    </h1>
   
 
-        
-        <a href="/2021/01/26/hello-world/" class="archive-article-date">
-  	<time datetime="2021-01-26T14:51:37.602Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-01-26</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2021/01/26/hello-world/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
 
 
@@ -509,8 +372,8 @@
     <script>
 	var yiliaConfig = {
 		mathjax: false,
-		isHome: true,
-		isPost: false,
+		isHome: false,
+		isPost: true,
 		isArchive: false,
 		isTag: false,
 		isCategory: false,
