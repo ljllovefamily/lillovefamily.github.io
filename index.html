@@ -155,6 +155,74 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-ssm整合xml路径问题" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2021/02/05/ssm%E6%95%B4%E5%90%88xml%E8%B7%AF%E5%BE%84%E9%97%AE%E9%A2%98/">ssm整合xml路径问题</a>
+    </h1>
+  
+
+        
+        <a href="/2021/02/05/ssm%E6%95%B4%E5%90%88xml%E8%B7%AF%E5%BE%84%E9%97%AE%E9%A2%98/" class="archive-article-date">
+  	<time datetime="2021-02-05T05:42:34.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-02-05</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="class-path-resource-mapper-cannot-be-resolved-to-URL-because-it-does-not-exist"><a href="#class-path-resource-mapper-cannot-be-resolved-to-URL-because-it-does-not-exist" class="headerlink" title="class path resource [ mapper/] cannot be resolved to URL because it does not exist"></a>class path resource [ mapper/] cannot be resolved to URL because it does not exist</h1><p>出现上述问题注意  </p>
+<h3 id="1-错误写法"><a href="#1-错误写法" class="headerlink" title="1.错误写法"></a>1.错误写法</h3><pre><code>classpath:mapper/*.xml
+</code></pre>
+<h3 id="2-正确写法"><a href="#2-正确写法" class="headerlink" title="2.正确写法"></a>2.正确写法</h3><pre><code>classpath:/mapper/*.xml   
+</code></pre>
+<p>注意Resources 文件夹下只有mapper一级文件夹。 </p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2021/02/05/ssm%E6%95%B4%E5%90%88xml%E8%B7%AF%E5%BE%84%E9%97%AE%E9%A2%98/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-SSM整合琐碎记录" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
